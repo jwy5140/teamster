@@ -25,8 +25,34 @@ const GoalsContainer = () => {
 
     const createGoals = () => {
         return goals.map((goal)=>{
-            return <GoalCard key={`${goal.id}-${uuid()}`} goal={{...goal}} />
+            return <GoalCard key={`${goal.id}-${uuid()}`} goal={{...goal}} delete={handleDelete} edit={handleEdit}/>
         })
+    }
+    
+    const handleDelete = (id) => {
+
+        let newGoals = goals.filter(goal=>{
+            return goal.id !== id
+        })
+
+        fetch(`${fetchURL}/goals/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "Authorization": document.cookie,
+            }
+        })
+
+        setGoals(newGoals)
+        
+    }
+
+    const handleEdit = (goal) => {
+        fetch(`${fetchURL}/goals`)
+        .then(resp=>resp.json())
+        .then((json)=>{
+            let dbgoals = json.filter((goal)=>{return goal.user_id === user.id})
+            setGoals(dbgoals)
+        }) 
     }
 
     return <Fragment>

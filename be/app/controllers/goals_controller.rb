@@ -1,3 +1,4 @@
+
 class GoalsController < ApplicationController
 
     skip_before_action :authorized, only: [:index]

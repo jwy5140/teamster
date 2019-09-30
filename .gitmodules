@@ -1,0 +1,6 @@
+[submodule "fe"]
+	path = fe
+	url = git@github.com:jwy5140/teamster_fe.git
+[submodule "be"]
+	path = be
+	url = git@github.com:jwy5140/teamster_be.git

@@ -266,18 +266,6 @@ div.blur-box {
   padding-bottom: 2.5%;
 }
 
-div.goal-box {
-  color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  top: 15vh;
-  left: 30vw;
-  width: 40vw;
-  position: absolute;
-  z-index: 99;
-  background-color: hsla(213, 20%, 36%, 1);
-}
-
 .front-page button {
   height: 30%;
   width: 45%;  
@@ -355,6 +343,7 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
+
 /*-------------------------------*/
 
 /* Goal Form */
@@ -450,6 +439,40 @@ div#root div.MuiDrawer-paperAnchorLeft{
 
 /* ----------------------------- */
 
+/* Goal Cards */
+
+
+div.goal-box {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  top: 15vh;
+  left: 30vw;
+  width: 40vw;
+  position: absolute;
+  z-index: 99;
+  background-color: hsla(213, 20%, 36%, 1);
+}
+
+div.confirm-box {
+  position: absolute;
+  display: block;
+  top: 50vh;
+  left: 25vw;
+  width: 50%;
+}
+
+div.edit-goal {
+  position: absolute;
+  display: block;
+  top: 25vh;
+  left: 25vw;
+  width: 50%;
+  background-color: hsla(213, 20%, 36%, 1);
+}
+
+/* ----------------------------- */
+
 /* Navbar */
 
 #navbar a.active button {
@@ -533,7 +556,7 @@ div.profile-menu{
   grid-area: 1/1/20/10;
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 7.5% 3% repeat(5, 1fr);
+  grid-template-rows: 7.5% 3% repeat(6, 1fr);
   grid-template-columns: repeat(7, 1fr);
   background-color: hsla(213, 20%, 36%, 0.7);
   font-size: 2vw;
@@ -564,7 +587,7 @@ div.profile-menu{
 }
 
 .cal-d:last-of-type{
-  grid-area: 7/7/7/7;
+  grid-area: 7/7/8/7;
 }
 
 .cal-n{
@@ -573,6 +596,19 @@ div.profile-menu{
 
 .cal-d{
   border: 1px solid black;
+}
+
+#month-year {
+  display: inline-block;
+  min-width: 25vw;
+}
+
+#cal-btn {
+  color: whitesmoke;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  outline: none;
 }
 
 /* ----------------------- */

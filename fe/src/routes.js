@@ -1,5 +1,5 @@
-import { Route, Switch } from 'react-router-dom'
-import React, { useContext } from 'react'  
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from 'react'  
 
 import Signup from './components/nonAuth/signup'
 import Login from './components/nonAuth/login'
@@ -11,12 +11,14 @@ import AuthRoute from './components/Auth/authroutes'
 export const Routes = () => {
 
     return (
-        <Switch>
-            <AuthRoute exact path='/dashboard' component={Interface} />
-            <Route exact path='/unauthorized' component={Unauthorized}/>
-            <Route exact path='/signup' component={Signup} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/' component={Splash} />
-        </Switch>
+        <Router>
+            <Switch>
+                <AuthRoute exact path='/dashboard' component={Interface} />
+                <Route exact path='/unauthorized' component={Unauthorized}/>
+                <Route exact path='/signup' component={Signup} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/' component={Splash} />
+            </Switch>
+        </Router>
     )
 }
